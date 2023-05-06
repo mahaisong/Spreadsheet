@@ -1,0 +1,18 @@
+1.采用了Stack，记录T--TextChangedEvents。
+T里面有   指定的哪一列、旧值什么、新值是什么。
+private string newString;
+        private string oldString;。
+                private Cell cells;
+       
+2. 改变值时：
+                 CPTS321.TextChangedEvents command = new CPTS321.TextChangedEvents
+                 (cell, cell.Text, this.dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), "Text");
+//放入Stack中
+                this.sheet.AddUndoStack(command);
+       
+       
+3.如果点击撤掉，就堆栈中找一下旧值。 因为有cell对象，所以可以直接修改。
+
+
+
+
